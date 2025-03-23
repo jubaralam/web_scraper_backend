@@ -5,7 +5,8 @@ const cheerio = require("cheerio");
 const fs = require("fs");
 const dotenv = require("dotenv").config();
 server.use(express.json())
-
+const cors = require("cors")
+server.use(cors())
 const connection = require("./db");
 const productRouter = require("./routes/product")
 server.use("/api/product", productRouter)
