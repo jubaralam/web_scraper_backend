@@ -1,0 +1,35 @@
+{
+  "name": "web_scraper_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jubaralam/web_scraper_backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jubaralam/web_scraper_backend/issues"
+  },
+  "homepage": "https://github.com/jubaralam/web_scraper_backend#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.12.2",
+    "nodemon": "^3.1.9",
+    "puppeteer": "^24.4.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "user-agents": "^1.1.487"
+  }
+}
