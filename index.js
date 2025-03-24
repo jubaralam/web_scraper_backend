@@ -4,19 +4,20 @@ const request = require("request-promise");
 const cheerio = require("cheerio");
 const fs = require("fs");
 const dotenv = require("dotenv").config();
-server.use(express.json())
-const cors = require("cors")
-server.use(cors())
+server.use(express.json());
+const cors = require("cors");
+server.use(cors());
 const connection = require("./db");
-const productRouter = require("./routes/product")
-server.use("/api/product", productRouter)
+const productRouter = require("./routes/product");
+server.use("/api/product", productRouter);
 const url = process.env.URL;
 const PORT = process.env.PORT || 5500;
 
 server.post("/get-data", async (req, res) => {
+  const { search } = req.body;
   try {
     const response = await request({
-      uri: url,
+      uri: search,
       headers: {
         accept:
           "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
@@ -42,8 +43,7 @@ server.post("/get-data", async (req, res) => {
       }
     });
 
-    // Save response for debugging
-    fs.writeFileSync("./data.html", response, "utf-8");
+
 
     res.status(200).send({ data: results });
   } catch (error) {
